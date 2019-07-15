@@ -1,0 +1,15 @@
+<div id="mat-card-wrapper">
+    <div *ngFor='let user of users'>
+        <mat-card class="tp-card">
+            <mat-card-header>
+                <div mat-card-avatar class="tp-header-image"><img src="{{user.avatar}}" height="50px" width="50px">
+                </div>
+                <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
+                <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
