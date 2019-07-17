@@ -7,8 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
 import { UserComponent } from './components/user/user.component';
 import { MatCardModule } from '@angular/material/card';
 
@@ -17,8 +15,6 @@ import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent,
     UserComponent
   ],
   imports: [

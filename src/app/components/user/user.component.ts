@@ -13,17 +13,21 @@ import User from '../../models/user';
 })
 export class UserComponent implements OnInit {
   users: Array<User>;
-  // path: string = "https://jsonplaceholder.typicode.com/users"
 
-  constructor(private http: HttpClient,
-    private userService: UserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers()
+    this.createUser()
   }
   getUsers() {
-    this.userService.getUsers().subscribe(data => {
-      this.users = data
+    this.userService.getUsers().subscribe(res => {
+      this.users = res['data']
+    })
+  }
+  createUser() {
+    this.userService.createUser().subscribe(res => {
+      alert(JSON.stringify(res))
     })
   }
 }
