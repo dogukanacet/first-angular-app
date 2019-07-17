@@ -1,6 +1,8 @@
-import {Component,OnInit} from '@angular/core';
-import {UserService} from 'src/app/services/user/user.service';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { UserService } from 'src/app/services/user/user.service';
 import User from '../../models/user';
+
 
 
 @Component({
@@ -11,12 +13,18 @@ import User from '../../models/user';
 })
 export class UserComponent implements OnInit {
   users: Array<User>;
+  // path: string = "https://jsonplaceholder.typicode.com/users"
 
-  constructor(private userService: UserService,) {}
+  constructor(private http: HttpClient,
+    private userService: UserService) { }
 
   ngOnInit() {
-    this.users= this.userService.getUsers();
+    this.getUsers()
   }
-
+  getUsers() {
+    this.userService.getUsers().subscribe(data => {
+      this.users = data
+    })
+  }
 }
 

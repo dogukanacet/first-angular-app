@@ -1,7 +1,7 @@
-export default interface user {
+export default interface User {
     id: number,
     email: string,
-    firstName: string,
-    lastName: string,
+    username: string,
+    name: string,
     avatar: string
 };
