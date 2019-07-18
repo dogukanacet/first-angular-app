@@ -1,12 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 import User from '../../models/user';
-import CreateUserResponse from 'src/app/models/createUserResponse';
 import CreateUserRequest from 'src/app/models/createUserRequest';
-
-
-
-
 
 @Component({
   selector: 'app-user',
@@ -17,13 +12,11 @@ import CreateUserRequest from 'src/app/models/createUserRequest';
 export class UserComponent implements OnInit {
   users: Array<User>
   newUser: CreateUserRequest = <CreateUserRequest>{}
-  newUser2: CreateUserResponse = <CreateUserResponse>{}
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers()
-    // this.createUser()
   }
   getUsers() {
     this.userService.getUsers().subscribe(res => {
@@ -31,15 +24,10 @@ export class UserComponent implements OnInit {
     })
   }
   createUser() {
-
-    this.userService.createUser().subscribe(res => {
-      alert(JSON.stringify(res))
+    this.userService.createUser(this.newUser).subscribe(res => {
+      this.users.push({ first_name: res.name, last_name: res.job }), err => {
+        alert("hata")
+      }
     })
-  }
-  onClick() {
-    if(this.newUser){
-      this.users.push(this.newUser)
-      this.newUser
-    }
   }
 }

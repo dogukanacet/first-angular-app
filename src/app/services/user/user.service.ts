@@ -11,7 +11,6 @@ import CreateUserRequest from 'src/app/models/createUserRequest';
 })
 export class UserService {
   path: string = "https://reqres.in/"
-  newUser: CreateUserRequest = <CreateUserRequest>{}
   users: User[]
 
   constructor(private http: HttpClient) { }
@@ -20,10 +19,8 @@ export class UserService {
     return this.http.get<User[]>(this.path + "api/users")
   }
 
-  createUser(): Observable<CreateUserResponse> {
-    this.newUser.email = "engineer";
-    this.newUser.name = "mahmut";
-    return this.http.post<CreateUserResponse>(this.path + "api/users", this.newUser)
+  createUser(user: CreateUserRequest): Observable<CreateUserResponse> {
+    return this.http.post<CreateUserResponse>(this.path + "api/users", user)
   }
 }
 

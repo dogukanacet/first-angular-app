@@ -12,31 +12,18 @@
         </mat-card>
     </div>
     <div class="form">
-        <form ng-submit="console.log(users)" ng-controller="ExampleController" #userForm="ngForm">
-            {{userForm.value | json}}
-
-            <hr>
+        <form>
             <div class="form-group">
                 <label> Name </label>
                 <input [(ngModel)]="newUser.name" type="text" class="form-control" name="name"
-                    aria-describedby="emailHelp" placeholder="Enter name">
+                    aria-describedby="emailHelp" placeholder="Enter name" ng-required="required">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Job</label>
-                <input [(ngModel)]="newUser.job" type="text" class="form-control" name="job" placeholder="Enter Job">
+                <input [(ngModel)]="newUser.job" type="text" class="form-control" name="job" placeholder="Enter Job"
+                    ng-required="required">
             </div>
-            <button mat-button type="submit" class="btn btn-primary">Submit</button>
+            <button (click)="createUser()" mat-button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-</div>
-
-<div>
-    <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
-        <div>
-            <input type="text" name="profile" (change)="onFileSelect($event)" />
-        </div>
-        <div>
-            <button type="submit">Upload</button>
-        </div>
-    </form>
 </div>
