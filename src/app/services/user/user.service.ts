@@ -5,12 +5,14 @@ import { Observable } from 'rxjs';
 import CreateUserResponse from 'src/app/models/createUserResponse';
 import CreateUserRequest from 'src/app/models/createUserRequest';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   path: string = "https://reqres.in/"
-  newUser: CreateUserRequest  = <CreateUserRequest>{}
+  newUser: CreateUserRequest = <CreateUserRequest>{}
+  users: User[]
 
   constructor(private http: HttpClient) { }
 
@@ -19,10 +21,9 @@ export class UserService {
   }
 
   createUser(): Observable<CreateUserResponse> {
-    this.newUser.job = "engineer";
+    this.newUser.email = "engineer";
     this.newUser.name = "mahmut";
-
-    return this.http.post<CreateUserResponse>(this.path + "api/users",this.newUser)
+    return this.http.post<CreateUserResponse>(this.path + "api/users", this.newUser)
   }
 }
 
