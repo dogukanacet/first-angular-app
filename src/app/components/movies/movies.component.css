@@ -7,9 +7,10 @@ body {
   width: 300px;
   height: 560px;
   border: 20px;
-  background-color: rgb(0, 0, 0);
+  background-color: #5c5d5f;
   display: block;
-  margin: 5px;
+  margin: 10px;
+  box-shadow: -10px -10px 30px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px 4px rgba(56, 32, 102, 0.336);
 }
 
 hr {
@@ -17,9 +18,11 @@ hr {
 }
 p {
   color: white;
+  font-size: 0.6vw;
 }
 i {
   color: white;
+  font-size: 0.6vw;
 }
 
 /**********************************************************************************************/
