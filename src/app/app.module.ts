@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MoviesComponent } from './components/movies/movies.component';
 
 
 // import { UserService } from './services/user/user.service';
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
