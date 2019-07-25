@@ -1,16 +1,16 @@
 body {
   padding: 20px;
-  background: rgba(5, 4, 4, 0.87);
+  background-color: black;
 }
 .ui.card {
   float: left;
   width: 300px;
   height: 560px;
   border: 20px;
-  background-color: #5c5d5f;
+  background-color: #554524;
   display: block;
   margin: 10px;
-  box-shadow: -10px -10px 30px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px 4px rgba(56, 32, 102, 0.336);
+  box-shadow: -10px -10px 30px 4px rgba(0, 0, 0, 0.1), 10px 10px 30px 4px rgba(87, 0, 248, 0.521);
 }
 
 hr {
@@ -144,4 +144,30 @@ i {
     position: relative;
     margin-right: 0;
   }
+}
+
+.search {
+  width: 200px;
+  height: 40px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background: #444;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border: 1px solid #fff;
+}
+
+.search input {
+  width: 370px;
+  padding: 10px 5px;
+  float: left;
+  color: #ccc;
+  border: 0;
+  background: transparent;
+  border-radius: 3px 0 0 3px;
+}
+
+.search input:focus {
+  outline: 0;
+  background: transparent;
 }

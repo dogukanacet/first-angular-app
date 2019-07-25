@@ -9,7 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MoviesComponent } from './components/movies/movies.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { SearchPipe } from './components/movie/search.pipe';
+
+
+
 
 
 // import { UserService } from './services/user/user.service';
@@ -18,7 +22,8 @@ import { MoviesComponent } from './components/movies/movies.component';
   declarations: [
     AppComponent,
     UserComponent,
-    MoviesComponent
+    MovieComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,7 @@ import { MoviesComponent } from './components/movies/movies.component';
     HttpClientModule,
   ],
   providers: [
-    // UserService
+    MovieComponent
   ],
   bootstrap: [AppComponent],
 
