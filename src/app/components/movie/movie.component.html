@@ -3,6 +3,7 @@
 </head>
 
 <body>
+    
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -14,9 +15,11 @@
                     </a>
                 </li>
                 <form class="search" action="">
-                    <input type="search" [(ngModel)]="filterText" name="search" placeholder="Search here...">
+                    <input  type="text" name="search" [(ngModel)]="searchKey" placeholder="Search here...">
+                    <input  type="button" (click)="search()" text="Search" value="search"/>
                 </form>
-                <!-- <hr> -->
+                
+                     <!-- <hr> -->
                 <li>
                     <a href="#" (click)="getMovies()">Home</a>
                 </li>
@@ -35,7 +38,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div *ngFor="let movie of movies | search:filterText" class="ui card">
+                        <div *ngFor="let movie of movies " class="ui card">
                             <div class="image">
                                 <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
                             </div>

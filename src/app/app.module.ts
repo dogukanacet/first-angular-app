@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './components/movie/movie.component';
-import { SearchPipe } from './components/movie/search.pipe';
+
 
 
 
@@ -22,8 +22,7 @@ import { SearchPipe } from './components/movie/search.pipe';
   declarations: [
     AppComponent,
     UserComponent,
-    MovieComponent,
-    SearchPipe,
+    MovieComponent
   ],
   imports: [
     BrowserModule,

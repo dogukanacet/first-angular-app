@@ -8,17 +8,23 @@ import TvSerie from 'src/app/models/tvSerie';
   providedIn: 'root'
 })
 export class MovieService {
-  path: string = "https://api.themoviedb.org"
+  path: string = "https://api.themoviedb.org/3/"
   api_key: string = "api_key=6298ebd066f18ba169d303bf2858107d"
+  movies:Movie[]
   // https://api.themoviedb.org/3/tv/top_rated?api_key=6298ebd066f18ba169d303bf2858107d
 
   constructor(private http: HttpClient) { }
 
   getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(this.path + "/3/trending/movie/week?" + this.api_key)
+    return this.http.get<Movie[]>(this.path + "trending/movie/week?" + this.api_key)
   }
 
   getTvSeries(): Observable<TvSerie[]> {
-    return this.http.get<TvSerie[]>(this.path + "/3/tv/top_rated?" + this.api_key)
+    return this.http.get<TvSerie[]>(this.path + "tv/top_rated?" + this.api_key)
+  }
+  search(searchKey: String): Observable<any[]> {
+    let url=this.path + 'search/multi?' + this.api_key + '&query=' + searchKey
+    console.log(url)
+    return this.http.get<any[]>(url)
   }
 }

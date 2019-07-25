@@ -14,7 +14,7 @@ import TvSerie from 'src/app/models/tvSerie';
 export class MovieComponent implements OnInit {
   movies: Movie[]
   tvSeries: TvSerie[]
-  filterText: string
+  searchKey: String
 
 
   constructor(private movieService: MovieService, private titleService: Title) {
@@ -35,9 +35,15 @@ export class MovieComponent implements OnInit {
   }
   getTvSeries() {
     this.movieService.getTvSeries().subscribe(res => {
-      this.movies = res['results'], err => {
-        alert('hata')
-      }
+      this.movies = res['results'],
+        err => {
+          alert('hata')
+        }
+    })
+  }
+  search() {
+    this.movieService.search(this.searchKey).subscribe(res => {
+      this.movies  = res['results']
     })
   }
 }
