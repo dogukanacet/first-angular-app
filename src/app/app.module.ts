@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatButtonToggleModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatButtonToggleModule, MatDialogModule, MatCheckboxModule, MatTableModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +11,7 @@ import { UserComponent } from './components/user/user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './components/movie/movie.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -22,7 +23,7 @@ import { MovieComponent } from './components/movie/movie.component';
   declarations: [
     AppComponent,
     UserComponent,
-    MovieComponent
+    MovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,11 +40,14 @@ import { MovieComponent } from './components/movie/movie.component';
     MatCardModule,
     MatFormFieldModule,
     HttpClientModule,
+    NgbModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    MatTableModule
   ],
   providers: [
     MovieComponent
   ],
   bootstrap: [AppComponent],
-
 })
 export class AppModule { }
