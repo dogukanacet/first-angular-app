@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
+
 // import { UserService } from './services/user/user.service';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     UserComponent,
     MovieComponent,
+
   ],
   imports: [
     BrowserModule,

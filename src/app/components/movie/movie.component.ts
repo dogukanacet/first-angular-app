@@ -8,7 +8,6 @@ import Credits from '../../models/credits'
 
 import { Title } from "@angular/platform-browser";
 import { MatDialog } from '@angular/material'
-
 import { inject } from '@angular/core/testing';
 
 
@@ -26,46 +25,46 @@ export class MovieComponent implements OnInit {
   details: Details[]
   credits: Credits[]
   searchKey: String
-  movieID: number = 299534
+  movieID: number
 
 
 
   constructor(private movieService: MovieService,
     private titleService: Title,
     private dialog: MatDialog,
-    private modalService: NgbModal) {
+    private modalService: NgbModal,
+  ) {
 
     this.titleService.setTitle("MovieStore");
 
 
   }
-  mymodal = document.getElementsByClassName('my-modal')
   ngOnInit() {
     this.getMovies()
-    this.getDetails()
-    this.getCredits()
+    // this.getDetails()
+    // this.getCredits()
   }
 
   getMovies() {
     this.movieService.getMovies().subscribe(res => {
       this.movies = res['results']
+      // console.log(res)
         , err => {
           alert("hata")
         }
     })
   }
 
-  getDetails() {
-
-    this.movieService.getDetails(this.movieID).subscribe(res => {
+  getDetails(movieID) {
+    this.movieService.getDetails(movieID).subscribe(res => {
       this.details = res
-      console.log(JSON.stringify(res))
+      // console.log(res)
     })
   }
-  getCredits() {
-    this.movieService.getCredits(this.movieID).subscribe(res => {
-      this.credits = res
-      console.log(JSON.stringify(res))
+  getCredits(movieID) {
+    this.movieService.getCredits(movieID).subscribe(res => {
+      this.credits = res['cast']
+      // console.log(res)
     })
   }
 
