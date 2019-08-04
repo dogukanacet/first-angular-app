@@ -59,17 +59,27 @@
                             </div>
                             <!-- Details Modal -->
                             <ng-template #content let-modal>
-                                <div id="modal-container">
+                                <div *ngIf="details" id="modal-container">
                                     <div class="poster">
                                         <img id="modal-poster"
                                             src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
                                     </div>
+                                    <div (click)="modal.dismiss('Cross click')" class="close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </div>
                                     <div class="modal-content">
-                                        <div (click)="modal.dismiss('Cross click')" class="close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </div>
                                         <div class="title">{{movie.original_title}}</div>
-                                        <div class="runtime">
+                                        <div class="title-info">
+                                            <div class="genre">
+                                                {{details.genres[0].name}}&nbsp;/&nbsp; {{details.genres[1].name}}
+                                            </div>
+                                            <div class="release-date">
+                                                <i class="fa fa-calendar" aria-hidden="true">
+                                                </i> &nbsp;{{details.release_date}}
+                                            </div>
+                                            <div class="runtime">
+                                                <i class="far fa-clock"></i>&nbsp;{{details.runtime}}&nbsp;min
+                                            </div>
                                         </div>
                                         <div class="synopsisText">{{movie.overview}}
                                         </div>
