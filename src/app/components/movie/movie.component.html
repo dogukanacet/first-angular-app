@@ -46,16 +46,6 @@
                                 <a class="header">
                                     <p>{{movie.original_title}}</p>
                                 </a>
-                                <div class="meta">
-                                    <span class="date">
-                                        <p> Release Date : {{movie.release_date}}{{movie.first_air_date}}</p>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="extra content">
-                                <a class="item">
-                                    <i class="star icon"></i><i>{{movie.vote_average}} Metascore</i>
-                                </a>
                             </div>
                             <!-- Details Modal -->
                             <ng-template #content let-modal>
@@ -79,6 +69,12 @@
                                             </div>
                                             <div class="runtime">
                                                 <i class="far fa-clock"></i>&nbsp;{{details.runtime}}&nbsp;min
+                                            </div>
+                                            <div class="imdb-id">
+                                                <a href="https://www.imdb.com/title/{{details.imdb_id}}"
+                                                    target="_blank">
+                                                    <i
+                                                        class="fab fa-imdb"></i></a><span>&nbsp;&nbsp;{{details.vote_average}}&nbsp;Metascore</span>
                                             </div>
                                         </div>
                                         <div class="synopsisText">{{movie.overview}}

@@ -7,7 +7,7 @@ body {
 .ui.card {
   float: left;
   width: 300px;
-  height: 560px;
+  height: 520px;
   border: 20px;
   background-color: #61440b;
   display: block;
@@ -17,12 +17,8 @@ body {
 
 p {
   color: white;
-  font-size: 0.6vw;
-}
-
-i {
-  color: white;
-  font-size: 0.6vw;
+  font-size: 0.7vw;
+  text-align: center;
 }
 
 #poster {
@@ -76,10 +72,21 @@ i {
   .fa.fa-calendar {
     text-shadow: 0 0 5px #228dff, 0 0 10px #228dff, 0 0 15px #228dff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #228dff,
       0 0 50px #228dff, 0 0 75px #228dff;
+    font-size: 15px;
   }
   .far.fa-clock {
     text-shadow: 0 0 5px #228dff, 0 0 10px #228dff, 0 0 15px #228dff, 0 0 20px #fff, 0 0 35px #fff, 0 0 40px #228dff,
       0 0 50px #228dff, 0 0 75px #228dff;
+    font-size: 15px;
+  }
+  .fab.fa-imdb {
+    color: #f5de50;
+    background-color: transparent;
+    font-size: 25px;
+    // margin-right: 2px;
+    // max-width: 35px;
+    // max-height: 35px;
+    // margin-top: -6px;
   }
   .genre {
     margin-right: 20px;
@@ -89,6 +96,10 @@ i {
   }
   .runtime {
     margin-right: 20px;
+  }
+  span {
+    color: white;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
 }
 
