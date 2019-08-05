@@ -51,7 +51,7 @@
                             <ng-template #content let-modal>
                                 <div *ngIf="details" id="modal-container">
                                     <div class="poster">
-                                        <img id="modal-poster"
+                                        <img class="img-fluid" id="modal-poster"
                                             src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
                                     </div>
                                     <div (click)="modal.dismiss('Cross click')" class="close">
@@ -61,20 +61,21 @@
                                         <div class="title">{{movie.original_title}}</div>
                                         <div class="title-info">
                                             <div class="genre">
-                                                {{details.genres[0].name}}&nbsp;/&nbsp; {{details.genres[1].name}}
+                                                {{details.genres[0].name}}
                                             </div>
+                                            <!-- &nbsp;/&nbsp; {{details.genres[1].name}} -->
                                             <div class="release-date">
                                                 <i class="fa fa-calendar" aria-hidden="true">
                                                 </i> &nbsp;{{details.release_date}}
                                             </div>
-                                            <div class="runtime">
+                                            <div *ngIf="details.runtime" class="runtime">
                                                 <i class="far fa-clock"></i>&nbsp;{{details.runtime}}&nbsp;min
                                             </div>
                                             <div class="imdb-id">
                                                 <a href="https://www.imdb.com/title/{{details.imdb_id}}"
                                                     target="_blank">
-                                                    <i
-                                                        class="fab fa-imdb"></i></a><span>&nbsp;&nbsp;{{details.vote_average}}&nbsp;Metascore</span>
+                                                    <i class="fab fa-imdb"></i>
+                                                </a><span>&nbsp;&nbsp;{{details.vote_average}}&nbsp;Metascore</span>
                                             </div>
                                         </div>
                                         <div class="synopsisText">{{movie.overview}}
