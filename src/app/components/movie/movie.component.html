@@ -51,7 +51,7 @@
                             <ng-template #content let-modal>
                                 <div *ngIf="details" id="modal-container">
                                     <div class="poster">
-                                        <img class="img-fluid" id="modal-poster"
+                                        <img class="img-fluid" class="movie-image"
                                             src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
                                     </div>
                                     <div (click)="modal.dismiss('Cross click')" class="close">
