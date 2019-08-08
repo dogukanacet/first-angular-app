@@ -78,6 +78,11 @@ export class MovieComponent implements OnInit {
   }
   toggleCast() {
     document.getElementById("cast").classList.toggle('active');
+    document.getElementById('cast-button').classList.toggle('onclick')
+    document.getElementById('close').classList.toggle('onclick')
+  }
+  toggleCastBtn() {
+
   }
 }
 

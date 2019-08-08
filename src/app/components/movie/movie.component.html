@@ -54,11 +54,11 @@
                                         <img class="movie-image"
                                             src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
                                     </div>
-                                    <div (click)="modal.dismiss('Cross click')" class="close">
+                                    <div (click)="modal.dismiss('Cross click')" id="close">
                                         <span aria-hidden="true">&times;</span>
                                     </div>
-                                    <a (click)="getCredits(movie.id)" (click)="toggleCast()"
-                                        class="cast-button">CAST</a>
+                                    <a (click)="getCredits(movie.id)" (click)="toggleCastBtn()" (click)="toggleCast()"
+                                        id="cast-button">CAST</a>
                                     <div id="cast">
 
                                         <div *ngFor="let credit of credits; let i=index" class="ui-card">
