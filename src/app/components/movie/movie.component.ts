@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie/movie.service'
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import Movie from '../../models/movie'
 import Details from '../../models/details'
@@ -8,7 +8,6 @@ import Credits from '../../models/credits'
 
 import { Title } from "@angular/platform-browser";
 import { MatDialog } from '@angular/material'
-import { inject } from '@angular/core/testing';
 
 
 
@@ -21,6 +20,7 @@ import { inject } from '@angular/core/testing';
   providers: [MovieService]
 })
 export class MovieComponent implements OnInit {
+  panelOpenState = false;
   movies: Movie[]
   details: Details[]
   credits: Credits[]
@@ -48,7 +48,7 @@ export class MovieComponent implements OnInit {
   getMovies() {
     this.movieService.getMovies().subscribe(res => {
       this.movies = res['results']
-      // console.log(res)
+        // console.log(res)
         , err => {
           alert("hata")
         }
@@ -75,6 +75,9 @@ export class MovieComponent implements OnInit {
   }
   openVerticallyCentered(content) {
     this.modalService.open(content);
+  }
+  toggleCast() {
+    document.getElementById("cast").classList.toggle('active');
   }
 }
 
